@@ -31,7 +31,6 @@ def get_account_balance(account_id: str):
         finally:
             if 'db_cursor' in locals():
                 db_cursor.close()
-                
         raise HTTPException(status_code=503, detail="Database connection pool exhausted")
         
     return {"account_id": account_id, "balance": 150.00}
